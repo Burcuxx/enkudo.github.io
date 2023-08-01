@@ -5,6 +5,8 @@ block prepend head
     - var pageDescription = "Login Sayfası, Enkudo"
     - var pageName = "Login"
     - var pageClass = "page page-login"
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/css/intlTelInput.css">
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/intlTelInput.min.js"></script>
 
 block header
 
@@ -32,20 +34,91 @@ block content
 
                     .d-block
                         .ems-field.d-flex.flex-column.mb-50 <!--- .ems-field-msg-error --->
-                            .phone-box
-                                .form-floating
-                                    .phone-bg
-                                        .phone-control
-                                            .top-text Country Code*
-                                            .pc-select-box
-                                                .pc-select-box-left
-                                                    +img('ratio ratio-1x1 ratio-bg-circle telflagform', true, dirFrontend + 'images/tel-flag.png')
-                                                    span +232                                                        
-                                                .pc-select-box-right
-                                                    +icon("select-down").stroke-icon
-                                .form-floating.input-user-tel
-                                    input#Number.form-control(type='text' name='Number' value='' placeholder='')
-                                    label(for='Number') Number
+                            div.phone-box
+                                .select-top-text Country Code*
+                                <div class="iti iti--allow-dropdown iti--separate-dial-code iti--show-flags">
+                                    <div class="iti__flag-container">
+                                        <div class="iti__selected-flag" role="combobox" aria-haspopup="listbox" aria-controls="iti-0__country-listbox" aria-expanded="false" aria-label="Telephone country code" tabindex="0" title="United States">
+                                            <div class="iti__flag iti__us"></div>
+                                            <div class="iti__selected-dial-code">+1</div>
+                                            <div class="iti__arrow"></div>
+                                        </div>
+                                        <ul class="iti__country-list iti__hide" id="iti-0__country-listbox" role="listbox" aria-label="List of countries">
+                                            <li class="iti__country iti__preferred iti__active iti__highlight" tabindex="-1" id="iti-0__item-us-preferred" role="option" data-dial-code="1" data-country-code="us" aria-selected="true">
+                                                <div class="iti__flag-box">
+                                                    <div class="iti__flag iti__us"></div>
+                                                </div><span class="iti__country-name">United States</span><span class="iti__dial-code">+1</span>
+                                            </li>
+                                            <li class="iti__country iti__preferred" tabindex="-1" id="iti-0__item-gb-preferred" role="option" data-dial-code="44" data-country-code="gb" aria-selected="false">
+                                                <div class="iti__flag-box">
+                                                    <div class="iti__flag iti__gb"></div>
+                                                </div><span class="iti__country-name">United Kingdom</span><span class="iti__dial-code">+44</span>
+                                            </li>
+                                            <li class="iti__divider" role="separator" aria-disabled="true"></li>
+                                            <li class="iti__country iti__standard" tabindex="-1" id="iti-0__item-af" role="option" data-dial-code="93" data-country-code="af" aria-selected="false">
+                                                <div class="iti__flag-box">
+                                                    <div class="iti__flag iti__af"></div>
+                                                </div><span class="iti__country-name">Afghanistan (&#x202B;افغانستان&#x202C;&lrm;)</span><span class="iti__dial-code">+93</span>
+                                            </li>
+                                            <li class="iti__country iti__standard" tabindex="-1" id="iti-0__item-al" role="option" data-dial-code="355" data-country-code="al" aria-selected="false">
+                                                <div class="iti__flag-box">
+                                                    <div class="iti__flag iti__al"></div>
+                                                </div><span class="iti__country-name">Albania (Shqipëri)</span><span class="iti__dial-code">+355</span>
+                                            </li>
+                                            <li class="iti__country iti__standard" tabindex="-1" id="iti-0__item-dz" role="option" data-dial-code="213" data-country-code="dz" aria-selected="false">
+                                                <div class="iti__flag-box">
+                                                    <div class="iti__flag iti__dz"></div>
+                                                </div><span class="iti__country-name">Algeria (&#x202B;الجزائر&#x202C;&lrm;)</span><span class="iti__dial-code">+213</span>
+                                            </li>
+                                            <li class="iti__country iti__standard" tabindex="-1" id="iti-0__item-af" role="option" data-dial-code="93" data-country-code="af" aria-selected="false">
+                                                <div class="iti__flag-box">
+                                                    <div class="iti__flag iti__af"></div>
+                                                </div><span class="iti__country-name">Afghanistan (&#x202B;افغانستان&#x202C;&lrm;)</span><span class="iti__dial-code">+93</span>
+                                            </li>
+                                            <li class="iti__country iti__standard" tabindex="-1" id="iti-0__item-al" role="option" data-dial-code="355" data-country-code="al" aria-selected="false">
+                                                <div class="iti__flag-box">
+                                                    <div class="iti__flag iti__al"></div>
+                                                </div><span class="iti__country-name">Albania (Shqipëri)</span><span class="iti__dial-code">+355</span>
+                                            </li>
+                                            <li class="iti__country iti__standard" tabindex="-1" id="iti-0__item-dz" role="option" data-dial-code="213" data-country-code="dz" aria-selected="false">
+                                                <div class="iti__flag-box">
+                                                    <div class="iti__flag iti__dz"></div>
+                                                </div><span class="iti__country-name">Algeria (&#x202B;الجزائر&#x202C;&lrm;)</span><span class="iti__dial-code">+213</span>
+                                            </li>
+                                            <li class="iti__country iti__standard" tabindex="-1" id="iti-0__item-af" role="option" data-dial-code="93" data-country-code="af" aria-selected="false">
+                                                <div class="iti__flag-box">
+                                                    <div class="iti__flag iti__af"></div>
+                                                </div><span class="iti__country-name">Afghanistan (&#x202B;افغانستان&#x202C;&lrm;)</span><span class="iti__dial-code">+93</span>
+                                            </li>
+                                            <li class="iti__country iti__standard" tabindex="-1" id="iti-0__item-al" role="option" data-dial-code="355" data-country-code="al" aria-selected="false">
+                                                <div class="iti__flag-box">
+                                                    <div class="iti__flag iti__al"></div>
+                                                </div><span class="iti__country-name">Albania (Shqipëri)</span><span class="iti__dial-code">+355</span>
+                                            </li>
+                                            <li class="iti__country iti__standard" tabindex="-1" id="iti-0__item-dz" role="option" data-dial-code="213" data-country-code="dz" aria-selected="false">
+                                                <div class="iti__flag-box">
+                                                    <div class="iti__flag iti__dz"></div>
+                                                </div><span class="iti__country-name">Algeria (&#x202B;الجزائر&#x202C;&lrm;)</span><span class="iti__dial-code">+213</span>
+                                            </li>
+                                            <li class="iti__country iti__standard" tabindex="-1" id="iti-0__item-af" role="option" data-dial-code="93" data-country-code="af" aria-selected="false">
+                                                <div class="iti__flag-box">
+                                                    <div class="iti__flag iti__af"></div>
+                                                </div><span class="iti__country-name">Afghanistan (&#x202B;افغانستان&#x202C;&lrm;)</span><span class="iti__dial-code">+93</span>
+                                            </li>
+                                            <li class="iti__country iti__standard" tabindex="-1" id="iti-0__item-al" role="option" data-dial-code="355" data-country-code="al" aria-selected="false">
+                                                <div class="iti__flag-box">
+                                                    <div class="iti__flag iti__al"></div>
+                                                </div><span class="iti__country-name">Albania (Shqipëri)</span><span class="iti__dial-code">+355</span>
+                                            </li>
+                                            <li class="iti__country iti__standard" tabindex="-1" id="iti-0__item-dz" role="option" data-dial-code="213" data-country-code="dz" aria-selected="false">
+                                                <div class="iti__flag-box">
+                                                    <div class="iti__flag iti__dz"></div>
+                                                </div><span class="iti__country-name">Algeria (&#x202B;الجزائر&#x202C;&lrm;)</span><span class="iti__dial-code">+213</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <input type="tel" class="itl-phone" autocomplete="off" data-intl-tel-input-id="0" style="padding-left: 76px;" placeholder="(201) 555-0123">
+                                </div>
                             .ems-field-feedback *Mobile phone number is missing or incorrect
                                 
                         
@@ -61,5 +134,7 @@ block content
                             a.btn.btn-them-3.btn-lg.w-100(href="login-step2.html")
                                 span Next
 
+    
+                   
 
 block footer

@@ -202,10 +202,10 @@ block content
                                         .rrb-left
                                             .comments-box.d-flex.d-lg-none
                                                 .rrb-filter-head
-                                                    .rrb-filter-btn(id='rrb-filter-btn')
+                                                    .rrb-filter-btn(href="javascript:void(0)" aria-label="Reviews Filter" data-target="body" data-ready="ems-prd-reviews-filter-ready" data-animate="ems-prd-reviews-filter-animate" data-type="add" ) 
                                                         span Filter 
                                                         +icon("filter").stroke-icon
-                                                    .rrb-filter-sortby(id='rrb-filter-btn')
+                                                    .rrb-filter-sortby(href="javascript:void(0)" aria-label="Reviews Sortby" data-target="body" data-ready="ems-prd-reviews-sortby-ready" data-animate="ems-prd-reviews-sortby-animate" data-type="add" ) 
                                                         span Sort By 
                                                         +icon("compare").stroke-icon
 
@@ -255,13 +255,23 @@ block content
                                                 span.text-gray2.fs-14.mxw-300 To add a review, you need to subscribe to this service and log in. 
 
                                     .col-12.col-lg-6
+                                        // Bos ise bura gelecek
+                                        //.d-flex.flex-column.align-items-center
+                                            .box-empty
+                                                .title-box-empty.mt-25
+                                                    h4 There is no review for this product yet, <br>be the first to comment.
+                                                    a.btn.btn-them-2.btn-lg.mt-40.mxw-200.w-100(href="/")
+                                                        span Login to Add a Review
+                                                         
+                                        // Bos ise bura gelecek
+
                                         .rrb-right
                                             .comments-box
                                                 .rrb-filter-head.d-none.d-lg-flex
-                                                    .rrb-filter-btn(id='rrb-filter-btn')
+                                                    .rrb-filter-btn(href="javascript:void(0)" aria-label="Reviews Filter" data-target="body" data-ready="ems-prd-reviews-filter-ready" data-animate="ems-prd-reviews-filter-animate" data-type="add" ) 
                                                         span Filter 
                                                         +icon("filter").stroke-icon
-                                                    .rrb-filter-sortby(id='rrb-filter-btn')
+                                                    .rrb-filter-sortby(href="javascript:void(0)" aria-label="Reviews Sortby" data-target="body" data-ready="ems-prd-reviews-sortby-ready" data-animate="ems-prd-reviews-sortby-animate" data-type="add" ) 
                                                         span Sort By 
                                                         +icon("compare").stroke-icon
                                             
@@ -623,3 +633,11 @@ block content
     // Product Modal
     include includes/pdp-confirm-modal
     // Product Modal
+
+    //Reviews Filter Modal
+    include includes/reviews-filter
+    //Reviews Filter Modal
+
+    //Reviews Sortby Modal
+    include includes/reviews-sortby
+    //Reviews Sortby Modal

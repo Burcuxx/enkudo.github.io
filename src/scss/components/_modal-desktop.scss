@@ -254,7 +254,42 @@
         @extend %ems-modal-lg-animate-body;
     }
 }
-//Filter Modal
+
+//Review Filter Modal
+.ems-prd-reviews-filter {
+    width: 580px !important;
+    &-ready & {
+        @extend  %ems-modal-lg-ready;
+    }
+    &-animate & {
+        @extend %ems-modal-lg-animate-x;
+        @extend %ems-modal-lg-animate;
+        &-overlay {
+            @extend %ems-modal-lg-animate-overlay;
+        }
+    }
+    &-animate {
+        @extend %ems-modal-lg-animate-body;
+    }
+}
+
+//Review Sortby Modal
+.ems-prd-reviews-sortby {
+    width: 580px !important;
+    &-ready & {
+        @extend  %ems-modal-lg-ready;
+    }
+    &-animate & {
+        @extend %ems-modal-lg-animate-x;
+        @extend %ems-modal-lg-animate;
+        &-overlay {
+            @extend %ems-modal-lg-animate-overlay;
+        }
+    }
+    &-animate {
+        @extend %ems-modal-lg-animate-body;
+    }
+}
 
 .ems-square {
     &-ready & {
