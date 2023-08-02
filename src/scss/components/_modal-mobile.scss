@@ -235,6 +235,24 @@
     }
 }
 
+//Product Detail Share Modal
+.ems-prd-share {
+    width: 100% !important;
+    &-ready & {
+        @extend  %ems-modal-ready;
+    }
+    &-animate & {
+        @extend %ems-modal-animate-x;
+        @extend %ems-modal-animate;
+        &-overlay {
+            @extend %ems-modal-animate-overlay;
+        }
+    }
+    &-animate {
+        @extend %ems-modal-animate-body;
+    }
+}
+
 // EMS Modal Compact
 .ems-modal-compact {
     flex-direction: column;

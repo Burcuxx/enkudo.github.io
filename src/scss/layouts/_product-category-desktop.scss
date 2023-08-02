@@ -322,7 +322,7 @@
             transition: all 0.2s linear 0.1s;
             .link-item{
                 font-weight: 400;
-                font-size: 14px;
+                font-size: 17px;
                 color: $body-text-color;
             }
             &.active{
@@ -330,8 +330,8 @@
                 color: $content-bg-color;
                 transition: all 0.2s linear 0.1s;
                 .link-item{
-                    font-weight: 400;
-                    font-size: 14px;
+                    font-weight: 600;
+                    font-size: 18px;
                     color: $them-dark-color-1;
                 }
             }

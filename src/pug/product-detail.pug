@@ -44,7 +44,8 @@ block content
                                     div.pdb-img-text-icon.mt-0.mt-lg-0.d-flex.align-items-center
                                         +img('ratio ratio-1x1 ratio-bg-circle', true, dirFrontend + 'images/product/m-min-img.svg')
                                         span.fs-12 Mature 17+
-                                        +icon("info")
+                                        span.tooltip.right(data-text="Lorem ipsum dolar sit amet")
+                                            +icon("info")
 
                                 span.text-white.fs-16.fs-lg-18 Netflix, Inc. is an American media company based in Los Gatos, California. Founded in 1997 by Reed Hastings and Marc Randolph in Scotts Valley, California. 
                                 
@@ -96,34 +97,35 @@ block content
                                     .icon-box-fav-share.d-flex.align-items-center.justify-content-start
                                         a(href="/")
                                             +icon("fav").stroke-icon
-                                        a(href="/")
+                                        a(href="javascript:void(0)" aria-label="Share" data-target="body" data-ready="ems-prd-share-ready" data-animate="ems-prd-share-animate" data-type="add" ) 
                                             +icon("share").stroke-icon
 
-    section.product-list.pd-tab-nav-box.overflow-hidden.pt-0.pt-lg-60.pb-30.pb-lg-70
+    section.pd-tab-nav-box.overflow-hidden.pt-0.pt-lg-60.pb-30.pb-lg-70
         .container-fluid.px-0.px-lg-0
             .row.g-0
                 .col-12.col-lg-12
                     .tab-content(id='v-pills-tabContent')
                         .tab-pane.fade(id='v-pills-ratings-review-2').pt-0.pt-lg-0.pb-40.pb-lg-60
                             .pd-gallert-box
-                                .pd-gallert-list
-                                    .item
-                                        +picture('ratio ratio-1x1 ratio-gallery', lazy="true", dirFrontend + 'images/product/img-2.png', dirFrontend + 'images/product/img-2.png', dirFrontend + 'images/product/img-2.png')(class="w-100 img-fluid", alt="slide 1")
+                                +swiper('widgetAuto', false, false, true)(class="swiper-container ems-prdd-gallery widget-sm-1_5 widget-lg-4_25 ms-sm-7 ms-lg-8")
+                                    -for(var i=0; i<8; i++)        
+                                        li.swiper-slide
+                                            +picture('ratio ratio-1x1 ratio-gallery', lazy="true", dirFrontend + 'images/product/img-2.png', dirFrontend + 'images/product/img-2.png', dirFrontend + 'images/product/img-2.png')(class="w-100 img-fluid", alt="slide 1")
 
-                                    .item
-                                        +picture('ratio ratio-1x1 ratio-gallery', lazy="true", dirFrontend + 'images/product/img-8.png', dirFrontend + 'images/product/img-8.png', dirFrontend + 'images/product/img-8.png')(class="w-100 img-fluid", alt="slide 1")
+                                        li.swiper-slide
+                                            +picture('ratio ratio-1x1 ratio-gallery', lazy="true", dirFrontend + 'images/product/img-8.png', dirFrontend + 'images/product/img-8.png', dirFrontend + 'images/product/img-8.png')(class="w-100 img-fluid", alt="slide 1")
 
-                                    .item
-                                        +picture('ratio ratio-1x1 ratio-gallery', lazy="true", dirFrontend + 'images/product/img-5.png', dirFrontend + 'images/product/img-5.png', dirFrontend + 'images/product/img-5.png')(class="w-100 img-fluid", alt="slide 1")
+                                        li.swiper-slide
+                                            +picture('ratio ratio-1x1 ratio-gallery', lazy="true", dirFrontend + 'images/product/img-5.png', dirFrontend + 'images/product/img-5.png', dirFrontend + 'images/product/img-5.png')(class="w-100 img-fluid", alt="slide 1")
 
-                                    .item
-                                        +picture('ratio ratio-1x1 ratio-gallery', lazy="true", dirFrontend + 'images/product/img-6.png', dirFrontend + 'images/product/img-6.png', dirFrontend + 'images/product/img-6.png')(class="w-100 img-fluid", alt="slide 1")
+                                        li.swiper-slide
+                                            +picture('ratio ratio-1x1 ratio-gallery', lazy="true", dirFrontend + 'images/product/img-6.png', dirFrontend + 'images/product/img-6.png', dirFrontend + 'images/product/img-6.png')(class="w-100 img-fluid", alt="slide 1")
 
-                                    .item
-                                        +picture('ratio ratio-1x1 ratio-gallery', lazy="true", dirFrontend + 'images/product/img-2.png', dirFrontend + 'images/product/img-2.png', dirFrontend + 'images/product/img-2.png')(class="w-100 img-fluid", alt="slide 1")
+                                        li.swiper-slide
+                                            +picture('ratio ratio-1x1 ratio-gallery', lazy="true", dirFrontend + 'images/product/img-2.png', dirFrontend + 'images/product/img-2.png', dirFrontend + 'images/product/img-2.png')(class="w-100 img-fluid", alt="slide 1")
 
-                                    .item
-                                        +picture('ratio ratio-1x1 ratio-gallery', lazy="true", dirFrontend + 'images/product/img-8.png', dirFrontend + 'images/product/img-8.png', dirFrontend + 'images/product/img-8.png')(class="w-100 img-fluid", alt="slide 1")
+                                        li.swiper-slide
+                                            +picture('ratio ratio-1x1 ratio-gallery', lazy="true", dirFrontend + 'images/product/img-8.png', dirFrontend + 'images/product/img-8.png', dirFrontend + 'images/product/img-8.png')(class="w-100 img-fluid", alt="slide 1")
 
                 .col-12.col-lg-12
                     .d-flex.align-items-center.justify-content-center
@@ -377,7 +379,7 @@ block content
                                                                             path(fill-rule='evenodd' clip-rule='evenodd' d='M14 10.7566V12.4811C14 12.5984 14.0466 12.7087 14.1231 12.7777L17.75 16.5732L14.1231 20.3679C14.1231 20.3679 14 20.5472 14 20.6645C14 20.7818 14 22.2395 14 22.389C14 22.5385 14.138 22.6258 14.2369 22.5385C14.3357 22.4511 19.7538 17.0134 19.7538 17.0134C20.0821 16.719 20.0821 16.4903 19.7538 16.1982L14.2369 10.6095C14.138 10.5198 14 10.6072 14 10.7566Z')
 
                         div.tab-pane.fade(id='v-pills-gallery' role='tabpanel' aria-labelledby='v-pills-gallery-tab' tabindex="0")
-                            .pd-gallert-box.pd-gallert-box-2
+                            .pd-gallert-box-2
                                 .pd-gallert-list
                                     .item
                                         +picture('ratio ratio-1x1 ratio-gallery', lazy="true", dirFrontend + 'images/product/img-2.png', dirFrontend + 'images/product/img-2.png', dirFrontend + 'images/product/img-2.png')(class="w-100 img-fluid", alt="slide 1")
@@ -641,3 +643,7 @@ block content
     //Reviews Sortby Modal
     include includes/reviews-sortby
     //Reviews Sortby Modal
+
+    //Product Detail Share Modal
+    include includes/prd-share
+    //Product Detail Share Modal

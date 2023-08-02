@@ -40,7 +40,7 @@
 
 // .ems-modal.ems-modal-end
 .ems-modal-lg-end {
-    transform: translateX(75%);
+    transform: translateX(100%);
     right: 0;
     left: auto;
 }
@@ -257,7 +257,6 @@
 
 //Review Filter Modal
 .ems-prd-reviews-filter {
-    width: 580px !important;
     &-ready & {
         @extend  %ems-modal-lg-ready;
     }
@@ -275,7 +274,23 @@
 
 //Review Sortby Modal
 .ems-prd-reviews-sortby {
-    width: 580px !important;
+    &-ready & {
+        @extend  %ems-modal-lg-ready;
+    }
+    &-animate & {
+        @extend %ems-modal-lg-animate-x;
+        @extend %ems-modal-lg-animate;
+        &-overlay {
+            @extend %ems-modal-lg-animate-overlay;
+        }
+    }
+    &-animate {
+        @extend %ems-modal-lg-animate-body;
+    }
+}
+
+//Product Detail Share Modal
+.ems-prd-share {
     &-ready & {
         @extend  %ems-modal-lg-ready;
     }

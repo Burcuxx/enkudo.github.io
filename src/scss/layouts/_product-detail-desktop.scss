@@ -730,23 +730,44 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-color: #aaa rgba(0,0,0,0);
-    scrollbar-width: thin;
+    .swiper-slide{
+        picture{
+            width: 100%;
+            height: 190px;
+            img{
+                width: 100%;
+                height: 190px;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+    }
+    .swiper-button-next, .swiper-button-prev{
+        display: none;
+    }
+    .ratio.ratio-gallery::before {
+        --bs-aspect-ratio: calc(190 / 288 * 100%);
+    }   
+}
+
+.pd-gallert-box-2{   
+    width: 100%;       
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0px 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     .pd-gallert-list{
         display: flex;
         align-items: center;
-        scroll-snap-align: start;
+        flex-flow: wrap;
         gap:15px;       
         .item{
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
-            scroll-snap-align: center;    
-            scroll-snap-stop: always;        
+            align-items: center;    
             cursor: pointer;
             width: 288px;
             picture{
@@ -763,86 +784,8 @@
     }
     .ratio.ratio-gallery::before {
         --bs-aspect-ratio: calc(190 / 288 * 100%);
-    }     
-        
-    &::-webkit-scrollbar {
-        width: 4px;
-        height: 5px;
-    }
-    &::-webkit-scrollbar-button {
-        width: 0px;
-        height: 0px;
-    }
-    &::-webkit-scrollbar-thumb {
-        background: #00000024;
-        border-radius: 100px;
-    }
-    &::-webkit-scrollbar-thumb:hover {
-        background: #00000024;
-    }
-    &::-webkit-scrollbar-thumb:active {
-        background: #00000024;
-    }
-    &::-webkit-scrollbar-track {
-        background: transparent;
-        border-radius: 100px;
-    }
-    &::-webkit-scrollbar-track:hover {
-        background: transparent;
-    }
-
-    &::-webkit-scrollbar-track:active {
-        background: transparent;
-    }
-    &::-webkit-scrollbar-corner {
-        background: transparent;
-    }
-
-    &-2{   
-        width: 100%;       
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0px 0;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        overflow-x: hidden;
-        scroll-snap-type: none;
-        -webkit-overflow-scrolling: none;
-        scrollbar-color: none;
-        scrollbar-width: none;
-        .pd-gallert-list{
-            display: flex;
-            align-items: center;
-            flex-flow: wrap;
-            scroll-snap-align: none;
-            gap:15px;       
-            .item{
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                scroll-snap-align: none;    
-                scroll-snap-stop: none;        
-                cursor: pointer;
-                width: 288px;
-                picture{
-                    width: 100%;
-                    height: 190px;
-                    img{
-                        width: 100%;
-                        height: 190px;
-                        object-fit: cover;
-                        object-position: center;
-                    }
-                }
-            }   
-        }
-        .ratio.ratio-gallery::before {
-            --bs-aspect-ratio: calc(190 / 288 * 100%);
-        }   
-    } 
-}
+    }   
+} 
 
 //Product confirm Modal
 .ems-pdp-confirm {
@@ -1113,7 +1056,6 @@
     width: 100% !important;
     flex-shrink: 0;
     background: $content-bg-color;
-    z-index: 99999;
     .modal-header{
         display: flex;
         width: 100%;
@@ -1209,14 +1151,12 @@
         bottom: 0;
         left: 0;
         right: 0;
-        z-index: 9999;
         width: 100%;
         height: 100%;
         opacity: 0.8;
         background: #00070E;
     }
 }
-
 
 //Reviews Filter Modal
 .ems-prd-reviews-sortby {
@@ -1226,7 +1166,6 @@
     width: 100% !important;
     flex-shrink: 0;
     background: $content-bg-color;
-    z-index: 99999;
     .modal-header{
         display: flex;
         width: 100%;
@@ -1257,24 +1196,22 @@
             align-items: flex-start;
             gap: 12px;
             margin: 0px 0;
-            .product-list-view{                
+            .all-radio-box{
                 display: flex;
-                align-items: flex-start;
+                width: 100%;
                 flex-direction: column;
-                justify-content: center;
-                .all-radio-box{
-                    display: flex;
+                align-items: flex-start;
+                gap: 8px;
+                .ems-radio-list{
+                    border-bottom: 1px solid rgba(232, 232, 232, 0.05);
                     width: 100%;
-                    flex-direction: column;
-                    align-items: flex-start;
-                    gap: 8px;
-                    .ems-radio-list{
-                        &::before {
-                            margin: 5px;
-                        }
-                        .form-radio-text{
-                            margin-left: 8px;
-                        }
+                    margin-bottom: 16px;
+                    padding-bottom: 16px;
+                    &::before {
+                        margin: 5px;
+                    }
+                    .form-radio-text{
+                        margin-left: 8px;
                     }
                 }
             }
@@ -1298,7 +1235,100 @@
         bottom: 0;
         left: 0;
         right: 0;
-        z-index: 9999;
+        width: 100%;
+        height: 100%;
+        opacity: 0.8;
+        background: #00070E;
+    }
+}
+
+
+//Product Detail Share Modal
+.ems-prd-share {
+    display: flex;
+    flex-direction: column;
+    max-width: 407px !important;
+    width: 100% !important;
+    flex-shrink: 0;
+    background: $content-bg-color;
+    .modal-header{
+        display: flex;
+        width: 100%;
+        padding: 20px 24px;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid $body-bg-color;
+        .title-modal{
+            color: $white;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 25px;
+        }
+        svg{
+            width: 32px;
+            height: 32px;
+            flex-shrink: 0;
+            color:$white;
+        }
+    }
+    .modal-body{        
+        height: 100%;
+        max-height: calc(100vh - 80px);
+        .share-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 12px;
+            margin: 0px 0;
+            .all-share-box{
+                display: flex;
+                width: 100%;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+                .ems-share-list{
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    gap: 8px;
+                    border-bottom: 1px solid rgba(232, 232, 232, 0.05);
+                    width: 100%;
+                    margin-bottom: 16px;
+                    padding-bottom: 16px;
+                    svg{
+                        width: 32px;
+                        height: 32px;
+                        color: $body-bg-color;
+                        background: $body-text-color;
+                        border-radius: 32px;
+                    }
+                    span{
+                        color: $body-text-color;
+                        font-size: 16px;
+                        font-weight: 400;
+                        line-height: 22px;
+                    }
+                    &:hover{                            
+                        svg{
+                            background: $them-color;
+                        }
+                        span{
+                            color: $them-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.ems-prd-share-ready{
+    .ems-prd-share-overlay{
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
         width: 100%;
         height: 100%;
         opacity: 0.8;

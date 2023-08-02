@@ -4,11 +4,9 @@
         max-width: 356px;
     }
     .ems-data-filter-header {
-        height: auto;
+        height: 56px;
         width: 100%;
         flex-shrink: 0;
-        border-radius: 21px;
-        background: $them-dark-color-1;
         display: inline-flex;
         align-items: center; 
         overflow-x: auto;
@@ -21,6 +19,8 @@
             display: flex;
             align-items: center;        
             scroll-snap-align: start;
+            border-radius: 21px;
+            background: $them-dark-color-1;
         }         
         .ems-data-filter-link{
             display: flex;
@@ -36,7 +36,7 @@
             scroll-snap-stop: always;
             .link-item{
                 font-weight: 400;
-                font-size: 14px;
+                font-size: 16px;
                 color: $body-text-color;
             }
             &.active{
@@ -44,8 +44,8 @@
                 color: $content-bg-color;
                 transition: all 0.2s linear 0.1s;
                 .link-item{
-                    font-weight: 400;
-                    font-size: 14px;
+                    font-weight: 600;
+                    font-size: 18px;
                     color: $content-bg-color;
                 }
             }

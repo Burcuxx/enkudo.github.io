@@ -2,7 +2,7 @@
   transition: all 0.32s ease-in-out;
   &-animate & {
     position: sticky;
-    background: $content-bg-color !important;
+    background: $body-bg-color !important;
     box-shadow: 0 0.125rem 0.25rem rgba(39, 33, 23, 0.08) !important;
   }
 }
@@ -179,7 +179,7 @@
             height: 60px;
             border-bottom: 1px solid rgba(232, 232, 232, 0.05);
             span{
-              color: $gray5;
+              color: $gray6;
               margin-left: 10px;
               font-weight: 400;
               font-size: 16px;
@@ -187,9 +187,9 @@
             svg{            
               width: 32px;
               height: 32px;
-              color: $gray5;
+              color: $gray6;
               &.icon-arrow-right{  
-                color: $gray5;
+                color: $gray6;
               }
             }
             &.active{   
@@ -454,7 +454,7 @@
         align-items: center;
         font-weight: 400;
         font-size: 14px;
-        line-height: 19.6px;          
+        line-height: 20px;          
         box-sizing: border-box;
         padding: 8px 0px 8px 17px;
         gap: 2px;

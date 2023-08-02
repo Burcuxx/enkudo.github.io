@@ -826,8 +826,36 @@
 
 .pd-gallert-box{   
     width: 100%;       
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto 0 15px;
+    padding: 0px 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    .swiper-slide{
+        picture{
+            width: 100%;
+            height: 190px;
+            img{
+                width: 100%;
+                height: 190px;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+    }
+    .swiper-button-next, .swiper-button-prev{
+        display: none;
+    }
+    .ratio.ratio-gallery::before {
+        --bs-aspect-ratio: calc(190 / 288 * 100%);
+    }
+}
+
+.pd-gallert-box-2{   
+    width: 100%;       
+    max-width: 100%;
+    margin: 0 auto;
     padding: 0px 0;
     display: flex;
     justify-content: flex-start;
@@ -840,6 +868,7 @@
     .pd-gallert-list{
         display: flex;
         align-items: center;
+        flex-flow: nowrap;
         scroll-snap-align: start;
         gap:15px;       
         .item{
@@ -847,8 +876,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            scroll-snap-align: center;    
-            scroll-snap-stop: always;        
+            scroll-snap-align: start;    
             cursor: pointer;
             width: 288px;
             picture{
@@ -865,7 +893,8 @@
     }
     .ratio.ratio-gallery::before {
         --bs-aspect-ratio: calc(190 / 288 * 100%);
-    }  
+    }   
+    
     &::-webkit-scrollbar {
         width: 4px;
         height: 5px;
@@ -898,8 +927,7 @@
     &::-webkit-scrollbar-corner {
         background: transparent;
     }
-}
-
+} 
 
 //Product Modal
 .ems-pdp-confirm {
@@ -1029,7 +1057,6 @@
     }
 }
 
-
 .ems-pdp-verification {
     background: $body-bg-color;
     padding-bottom: 0px;
@@ -1119,7 +1146,6 @@
     }
 }
 
-
 .ems-pdp-review{
     display: flex;
     padding: 72px 24px 100px 24px;
@@ -1174,12 +1200,11 @@
     }
 }
 
-
 //Reviews Filter Modal
 .ems-prd-reviews-filter {
     display: flex;
     flex-direction: column;
-    max-width: 407px !important;
+    max-width: 100% !important;
     width: 100% !important;
     flex-shrink: 0;
     background: $content-bg-color;
@@ -1291,3 +1316,179 @@
     }
 }
 
+//Reviews Filter Modal
+.ems-prd-reviews-sortby {
+    display: flex;
+    flex-direction: column;
+    max-width: 100% !important;
+    width: 100% !important;
+    flex-shrink: 0;
+    background: $content-bg-color;
+    .modal-header{
+        display: flex;
+        width: 100%;
+        padding: 20px 24px;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid $body-bg-color;
+        .title-modal{
+            color: $white;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 25px;
+        }
+        svg{
+            width: 32px;
+            height: 32px;
+            flex-shrink: 0;
+            color:$white;
+        }
+    }
+    .modal-body{        
+        height: 100%;
+        max-height: calc(100vh - 80px);
+        .sortby-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 12px;
+            margin: 0px 0;
+            .all-radio-box{
+                display: flex;
+                width: 100%;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+                .ems-radio-list{
+                    border-bottom: 1px solid rgba(232, 232, 232, 0.05);
+                    width: 100%;
+                    margin-bottom: 16px;
+                    padding-bottom: 16px;
+                    &::before {
+                        margin: 5px;
+                    }
+                    .form-radio-text{
+                        margin-left: 8px;
+                    }
+                }
+            }
+        }
+    }
+    .modal-footer{
+        display: flex;
+        width: 100%;
+        padding: 24px 40px 32px 40px;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 24px;
+        background: $body-bg-color;        
+    }
+}
+.ems-prd-reviews-sortby-ready{
+    .ems-prd-reviews-sortby-overlay{
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.8;
+        background: #00070E;
+    }
+}
+
+//Product Detail Share Modal
+.ems-prd-share {
+    display: flex;
+    flex-direction: column;
+    max-width: 407px !important;
+    width: 100% !important;
+    flex-shrink: 0;
+    background: $content-bg-color;
+    .modal-header{
+        display: flex;
+        width: 100%;
+        padding: 20px 24px;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid $body-bg-color;
+        .title-modal{
+            color: $white;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 25px;
+        }
+        svg{
+            width: 32px;
+            height: 32px;
+            flex-shrink: 0;
+            color:$white;
+        }
+    }
+    .modal-body{        
+        height: 100%;
+        max-height: calc(100vh - 80px);
+        .share-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 12px;
+            margin: 0px 0;
+            .all-share-box{
+                display: flex;
+                width: 100%;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+                .ems-share-list{
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    gap: 8px;
+                    border-bottom: 1px solid rgba(232, 232, 232, 0.05);
+                    width: 100%;
+                    margin-bottom: 16px;
+                    padding-bottom: 16px;
+                    svg{
+                        width: 32px;
+                        height: 32px;
+                        color: $body-bg-color;
+                        background: $body-text-color;
+                        border-radius: 32px;
+                    }
+                    span{
+                        color: $body-text-color;
+                        font-size: 16px;
+                        font-weight: 400;
+                        line-height: 22px;
+                    }
+                    &:hover{                            
+                        svg{
+                            background: $them-color;
+                        }
+                        span{
+                            color: $them-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.ems-prd-share-ready{
+    .ems-prd-share-overlay{
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.8;
+        background: #00070E;
+    }
+}

@@ -5,6 +5,13 @@
     padding-top: 58px;
     margin-bottom: 80px;
 }
+.product-list{    
+    .row.product-slider.g-15{
+        --bs-gutter-y: 24px !important;
+        --bs-gutter-x: 7px !important;
+    }
+}
+
 .notfound-desc {
     margin: 176px auto;
     max-width: 406px;

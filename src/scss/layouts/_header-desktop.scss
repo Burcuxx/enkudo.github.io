@@ -2,7 +2,7 @@
   transition: all 0.32s ease-in-out;
   &-animate & {
     position: sticky;
-    background: $content-bg-color !important;
+    background: $body-bg-color !important;
     box-shadow: 0 0.125rem 0.25rem rgba(39, 33, 23, 0.08) !important;
   }
 }
@@ -162,7 +162,7 @@
             max-width: 100%;
             width: 100%;
             span{
-              color: $gray5;
+              color: $gray6;
               margin-left: 10px;
               font-weight: 400;
               font-size: 16px;
@@ -170,7 +170,7 @@
             svg{            
               width: 32px;
               height: 32px;
-              color: $gray5;
+              color: $gray6;
             }
             &.active{   
               background-color: transparent;       
@@ -641,8 +641,9 @@
         min-width: 147px;
         font-weight: 500;
         font-size: 14px;
-        line-height: 19.6px;          
+        line-height: 20px;      
         box-sizing: border-box;
+        border: 0;
         &.show{
           display: flex;
           padding: 8px 12px 12px 12px;
@@ -659,7 +660,9 @@
           border-bottom: 1px solid rgba(232, 232, 232, 0.05);
           gap: 4px;
           padding: 0;
-          font-size: 13px;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 20px;
           span{
             width: 14px;
             height: 14px;

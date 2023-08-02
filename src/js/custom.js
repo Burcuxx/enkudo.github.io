@@ -133,20 +133,48 @@ function handleTabToggleProductDetail() {
 }
 // Tab All Selected
 
+// Circle Login Finish Color
+function CheckBoxLoginNone() {
+  document.addEventListener('input', function() {
+    const numberValue = document.getElementById('Number').value;
+    const checkboxChecked = document.getElementById('CommunicationPermissions').checked;
+    const checkHidenShow = document.querySelector('.check-hiden-show');
+    if (numberValue && checkboxChecked) {
+      checkHidenShow.classList.add('d-none');
+    } else {
+      checkHidenShow.classList.remove('d-none');
+    }
+  });
+}
+// Check Box Login None
+
+// Circle Login Finish Color
+function CircleLoginFinishColor() {
+  document.addEventListener('DOMContentLoaded', function() {
+    var fillElements = document.querySelectorAll('.circle-wrap .fill');
+    var insideCircles = document.querySelectorAll('.inside-circle');
+    fillElements.forEach(function(fillElement) {
+      fillElement.addEventListener('animationend', function() {
+        fillElement.style.background = '#D93B41';
+        insideCircles.forEach(function(circle) {
+          circle.style.color = '#D93B41';
+        });
+      });
+    });
+  });
+}
+// Circle Login Finish Color
+
 // Scroll Top
 function setupScrollTop() {
-  const scrollableContainer = document.querySelector('.ems-data-filter-header');
-  scrollableContainer.addEventListener('mousedown', function(event) {
-    this.style.scrollBehavior = 'initial';
-    this.scrollLeft = event.pageX;
-    document.addEventListener('mousemove', mouseMoveHandler);
-  });
-  document.addEventListener('mouseup', function() {
-    document.removeEventListener('mousemove', mouseMoveHandler);
-    scrollableContainer.style.scrollBehavior = '';
-  });
-  function mouseMoveHandler(event) {
-    scrollableContainer.scrollLeft -= event.movementX;
+  let mybutton = document.getElementById("scroll-top-bx");
+  window.onscroll = function() {scrollFunction()};
+  function scrollFunction() {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      mybutton.style.display = "flex";
+    } else {
+      mybutton.style.display = "none";
+    }
   }
 }
 // Scroll Top
@@ -221,45 +249,19 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   // Product List Filter
-
+  // Check Box Login None
+  if (document.querySelector('.check-hiden-show')) {
+    CheckBoxLoginNone();
+  }
+  // Check Box Login None
+  // Circle Login Finish Color
+  if (document.querySelector('.circle-wrap')) {
+    CircleLoginFinishColor();
+  }
+  // Circle Login Finish Color
   // Scroll Top
-  if (document.querySelector('.ems-data-filter-header')) {
+  if (document.querySelector('.site-container')) {
     setupScrollTop();
   }
-});
-
-(function() {
-  // Değişiklik olayını dinleyin
-  document.addEventListener('input', function() {
-    // Inputların değerlerini alın
-    const numberValue = document.getElementById('Number').value;
-    const checkboxChecked = document.getElementById('CommunicationPermissions').checked;
-
-    // check-hiden-show elementini seçin
-    const checkHidenShow = document.querySelector('.check-hiden-show');
-
-    // Koşulu kontrol edin
-    if (numberValue && checkboxChecked) {
-      // Her iki koşul da sağlanıyorsa, check-hiden-show elementine d-none classını ekle
-      checkHidenShow.classList.add('d-none');
-    } else {
-      // Koşullardan en az biri eksikse, d-none classını kaldır
-      checkHidenShow.classList.remove('d-none');
-    }
-  });
-})();
-
-
-document.addEventListener('DOMContentLoaded', function() {
-  var fillElements = document.querySelectorAll('.circle-wrap .fill');
-  var insideCircles = document.querySelectorAll('.inside-circle');
-
-  fillElements.forEach(function(fillElement) {
-    fillElement.addEventListener('animationend', function() {
-      fillElement.style.background = '#D93B41';
-      insideCircles.forEach(function(circle) {
-        circle.style.color = '#D93B41';
-      });
-    });
-  });
+  // Scroll Top
 });

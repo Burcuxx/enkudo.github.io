@@ -110,7 +110,7 @@ html(lang=lang, dir=dir)
                 // HEAD
     // BODY
     body(class=pageClass)
-        .site-container
+        .site-container(id="backtotop")
             block header
                 // HEADER
                 header.site-header.sticky-top.text-white
@@ -144,8 +144,8 @@ html(lang=lang, dir=dir)
                 .ems-loading-overlay.ems-overlay
                 
             // SCROLL TOP
-            //block scroll-top-btn
-                a(id='scroll-top-bx' onclick='scrollTop()')
+            block scroll-top-btn
+                a(id='scroll-top-bx' href='#backtotop')
                     +icon("ArrowUp")
 
             block foot

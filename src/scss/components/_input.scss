@@ -202,7 +202,7 @@ textarea {
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     span{                                
         color: $gray2;
         margin-left: 8px;
@@ -609,7 +609,7 @@ select:active, textarea:active, input:active {
   }  
   .mask.full,
   .circle .fill {
-    animation: fill ease-in-out 10s;
+    animation: fill ease-in-out 120s;
     transform: rotate(180deg);
   }
   @keyframes fill {
