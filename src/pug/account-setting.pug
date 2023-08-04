@@ -1,0 +1,37 @@
+extends layouts/default.pug
+
+block prepend head
+    - var pageTitle = "Enkudo"
+    - var pageDescription = "Settings Sayfası, Enkudo"
+    - var pageName = "Settings"
+    - var pageClass = "page page-account-setting"
+    - var SettingsActive = "active"
+
+block content
+    section.account-section.mb-80
+        .container.p-0
+            .row.g-5
+                .account-box
+                    .left-box
+                        include includes/account-left-menu
+
+                    .right-box 
+                        .rb-content.bg-dark-them-2
+                            .rb-content-settings
+                                .mb-25.mb-lg-25.w-100
+                                    .title-box
+                                        h4.d-none.d-lg-block Settings
+                                        p You can manage your notification preferences and security settings in here.
+                                .d-flex.flex-column.align-items-start
+                                    span.text-white.fs-18.fw-500.mb-15 Notification Preferences
+                                    .ems-field.w-100.mxw-300.mb-5
+                                        .form-check
+                                            label.checkbox-container.align-items-start(for='Setting1')
+                                                input.form-check-input.rounded-0.fs-15(type='checkbox' id='Setting1')
+                                                span.checkmark
+                                                .form-check-textBy Keep me up to date with news and offers from all services
+                                            .ems-field-feedback 
+                                    a.btn.btn-them-2.btn-lg.mt-50.mxw-200.w-100(href="/")
+                                        span Save
+                                
+                                    

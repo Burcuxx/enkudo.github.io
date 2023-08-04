@@ -1,0 +1,28 @@
+//reviews-sortby Modal
+.ems-prd-reviews-sortby-overlay.ems-overlay(data-target="body" data-ready="ems-prd-reviews-sortby-ready" data-animate="ems-prd-reviews-sortby-animate" data-type="remove")
+.ems-modal.ems-modal-lg.ems-prd-reviews-sortby.ems-modal-end.ems-modal-lg-end
+    .modal-header.d-flex.justify-content-between
+        .title-modal Sort By
+        .d-flex
+            a.d-flex(href="javascript:void(0)" aria-label="close" data-target="body" data-ready="ems-prd-reviews-sortby-ready" data-animate="ems-prd-reviews-sortby-animate" data-type="remove")
+                +icon("close")
+
+    .modal-body.p-25.p-lg-40.ems-scrollbar.ems-scrollbar-vertical
+        .sortby-box
+            .all-radio-box.product-list-view(rel="sortby_list_1")
+                a.ems-radio-list.selected(href="javascript:void(0);" aria-label="sortby_type" rel="sortby_item_1")
+                    span.form-radio-text Most useful
+                a.ems-radio-list(href="javascript:void(0);" aria-label="sortby_type" rel="sortby_item_2")
+                    span.form-radio-text Most recent
+                a.ems-radio-list(href="javascript:void(0);" aria-label="sortby_type" rel="sortby_item_3")
+                    span.form-radio-text Hidhest rated
+                a.ems-radio-list(href="javascript:void(0);" aria-label="sortby_type" rel="sortby_item_4")
+                    span.form-radio-text Lovest rated
+                        
+
+    .modal-footer
+        .d-flex.flex-column.align-items-center.justify-content-end.w-100
+            .ems-field.mb-0.w-100
+                button.btn.btn-them-1.btn-lg.w-100(type='submit')
+                    span Confirm 
+//reviews-sortby Modal

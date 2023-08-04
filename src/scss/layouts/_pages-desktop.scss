@@ -1,3 +1,17 @@
+.page-section{
+    display: block;
+    position: relative;
+    margin-top: $site-header-height;
+    padding-top: 58px;
+    margin-bottom: 80px;
+}
+.product-list{    
+    .row.product-slider.g-15{
+        --bs-gutter-y: 40px !important;
+        --bs-gutter-x: 15px !important;
+    }
+}
+
 .notfound,
 .welcome {
    .img-wrap {

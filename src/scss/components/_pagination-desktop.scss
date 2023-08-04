@@ -64,10 +64,9 @@
                 box-shadow: none;
             }            
             &.active,.active>.page-link {
-                    color: #50575B;
+                    color: $content-bg-color;
                     background-color: $them-color;
                     border-color: none;
-                    color: #50575B;
                     text-align: center;
                     font-size: 14px;
                     font-weight: 500;

@@ -1,3 +1,18 @@
+// .ems-modal
+.ems-modal {
+    .modal-header{
+        a{
+            color: $white;
+            &:hover{
+                color: $them-color;
+            }
+        }
+    }
+}
+.ems-overlay{
+    background: $body-bg-color;
+    opacity: 0.6;
+}
 // .ems-modal-lg
 .ems-modal-lg {
     display: none;
@@ -7,7 +22,7 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background: $white;
+    background:$content-bg-color;
     opacity: 0;
     transition: all .12s cubic-bezier(0.950, 0.050, 0.795, 0.035);
 }
@@ -25,7 +40,7 @@
 
 // .ems-modal.ems-modal-end
 .ems-modal-lg-end {
-    transform: translateX(75%);
+    transform: translateX(100%);
     right: 0;
     left: auto;
 }
@@ -55,7 +70,7 @@
 // EMS Modal Compact
 .ems-modal-lg-compact {
     flex-direction: column;
-    background: $white;
+    background: $content-bg-color;
     position: fixed;
     top: 0;
     right: 0;
@@ -148,9 +163,65 @@
     }
 }
 
+//Product confirm Modal
+.ems-pdp-confirm {
+    width: 800px !important;
+    max-height: max-content;
+    height: auto;
+    left: 0;
+    right: 0;
+    top:0;
+    bottom: 0;
+    margin: auto;
+    z-index: -9999;
+   
+    &-animate & {
+        @extend %ems-modal-lg-ready;
+        @extend %ems-modal-lg-animate;
+        bottom: 0;
+
+        &-overlay {
+            @extend %ems-modal-lg-animate-overlay;
+        }
+    }
+}
+.ems-pdp-confirm-ready{
+    .ems-pdp-confirm {
+        z-index: 9999;
+    }
+}
+
+//Product verification Modal
+.ems-pdp-verification {
+    width: 720px !important;
+    max-height: 578px;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top:0;
+    bottom: 0;
+    margin: auto;
+    z-index: -9999;
+   
+    &-animate & {
+        @extend %ems-modal-lg-ready;
+        @extend %ems-modal-lg-animate;
+        bottom: 0;
+
+        &-overlay {
+            @extend %ems-modal-lg-animate-overlay;
+        }
+    }
+}
+.ems-pdp-verification-ready{
+    .ems-pdp-verification {
+        z-index: 9999;
+    }
+}
+
 //Filter Modal
 .ems-prd-filter {
-    width: 580px !important;
+    width: 100% !important;
     &-ready & {
         @extend  %ems-modal-lg-ready;
     }
@@ -165,7 +236,76 @@
         @extend %ems-modal-lg-animate-body;
     }
 }
-//Filter Modal
+
+//Sortby Modal
+.ems-prd-sortby {
+    width: 100% !important;
+    &-ready & {
+        @extend  %ems-modal-lg-ready;
+    }
+    &-animate & {
+        @extend %ems-modal-lg-animate-x;
+        @extend %ems-modal-lg-animate;
+        &-overlay {
+            @extend %ems-modal-lg-animate-overlay;
+        }
+    }
+    &-animate {
+        @extend %ems-modal-lg-animate-body;
+    }
+}
+
+//Review Filter Modal
+.ems-prd-reviews-filter {
+    &-ready & {
+        @extend  %ems-modal-lg-ready;
+    }
+    &-animate & {
+        @extend %ems-modal-lg-animate-x;
+        @extend %ems-modal-lg-animate;
+        &-overlay {
+            @extend %ems-modal-lg-animate-overlay;
+        }
+    }
+    &-animate {
+        @extend %ems-modal-lg-animate-body;
+    }
+}
+
+//Review Sortby Modal
+.ems-prd-reviews-sortby {
+    &-ready & {
+        @extend  %ems-modal-lg-ready;
+    }
+    &-animate & {
+        @extend %ems-modal-lg-animate-x;
+        @extend %ems-modal-lg-animate;
+        &-overlay {
+            @extend %ems-modal-lg-animate-overlay;
+        }
+    }
+    &-animate {
+        @extend %ems-modal-lg-animate-body;
+    }
+}
+
+//Product Detail Share Modal
+.ems-prd-share {
+    &-ready & {
+        @extend  %ems-modal-lg-ready;
+    }
+    &-animate & {
+        @extend %ems-modal-lg-animate-x;
+        @extend %ems-modal-lg-animate;
+        &-overlay {
+            @extend %ems-modal-lg-animate-overlay;
+        }
+    }
+    &-animate {
+        @extend %ems-modal-lg-animate-body;
+    }
+}
+
 .ems-square {
     &-ready & {
         @extend  %ems-modal-lg-ready;

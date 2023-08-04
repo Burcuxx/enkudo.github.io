@@ -2,7 +2,7 @@
   transition: all 0.32s ease-in-out;
   &-animate & {
     position: sticky;
-    background: $content-bg-color !important;
+    background: $body-bg-color !important;
     box-shadow: 0 0.125rem 0.25rem rgba(39, 33, 23, 0.08) !important;
   }
 }
@@ -68,7 +68,7 @@
       a.menubtn{
         background: transparent;
         padding: 0;
-        color: $body-text-color;
+        color: $white;
         cursor: pointer;
         text-decoration: none;
         margin-right: 24px;
@@ -83,7 +83,7 @@
         }
         span{
           font-size: 14px;
-          line-height: 19.6px;
+          line-height: 20px;
           font-weight: 400;
         }
         svg.icon-menunav{
@@ -134,7 +134,7 @@
           top: 40px;
           font-weight: 600;
           font-size: 22px;
-          line-height: 26.4px;
+          line-height: 26px;
         }
         &.show{
           display: flex;
@@ -162,7 +162,7 @@
             max-width: 100%;
             width: 100%;
             span{
-              color: $gray5;
+              color: $gray6;
               margin-left: 10px;
               font-weight: 400;
               font-size: 16px;
@@ -170,7 +170,7 @@
             svg{            
               width: 32px;
               height: 32px;
-              color: $gray5;
+              color: $gray6;
             }
             &.active{   
               background-color: transparent;       
@@ -599,7 +599,7 @@
       a.langbtn{
         cursor: pointer;
         text-decoration: none;
-        color: $body-text-color;
+        color: $white;
         display: inline-flex;
         align-items: center;
         justify-content: flex-end;
@@ -620,6 +620,7 @@
         svg.icon-arrow-down{
           width: 24px;
           height: 24px;
+          color: $white;
         }
         &.show{       
           border-bottom: 1px solid #00070E;     
@@ -640,8 +641,9 @@
         min-width: 147px;
         font-weight: 500;
         font-size: 14px;
-        line-height: 19.6px;          
+        line-height: 20px;      
         box-sizing: border-box;
+        border: 0;
         &.show{
           display: flex;
           padding: 8px 12px 12px 12px;
@@ -658,7 +660,9 @@
           border-bottom: 1px solid rgba(232, 232, 232, 0.05);
           gap: 4px;
           padding: 0;
-          font-size: 13px;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 20px;
           span{
             width: 14px;
             height: 14px;
@@ -684,7 +688,7 @@
       a.userbtn{
         cursor: pointer;
         text-decoration: none;
-        color: $body-text-color;
+        color: $white;
         display: inline-flex;
         align-items: center;
         font-weight: 400;
@@ -701,12 +705,13 @@
         }
         svg.icon-arrow-down{
           width: 24px;
-          height: 24px;            
+          height: 24px;
+          color: $white;            
         }
         svg.icon-profil{
           width: 32px;
           height: 32px;
-          color: $body-text-color;  
+          color: $white; 
         }
         &.show{   
           border-bottom: 1px solid #00070E;         

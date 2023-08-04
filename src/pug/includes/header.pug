@@ -204,7 +204,7 @@ nav.navbar.navbar-fixed-top.navbar-inverse
 								span.close-button
 									+icon("close")
 							.search-input-box
-								input#inputSearch(type='text', placeholder='Find Games, Digital Platforms and more...', required='')
+								input#inputSearch(type='text' placeholder='Find Games, Digital Platforms and more...' required='')
 						a.search-icons(href="search-result.html")
 							+icon("searchicon").stroke-icon
 						.dropdown-menu(aria-labelledby='dropdownSearch')
@@ -306,15 +306,15 @@ nav.navbar.navbar-fixed-top.navbar-inverse
 									div Subscriptions
 								a.dropdown-item(href="account-favoriets.html")
 									+icon("fav").stroke-icon
-									div My Favoriets
+									div My Favorites
 								a.dropdown-item(href="account-reviews.html")
-									+icon("rating").stroke-icon
+									+icon("rating")
 									div Ratings & Reviews
-								a.dropdown-item(href="account-notification.html")
-									+icon("notification").stroke-icon
-									div Notifictions
-								a.dropdown-item(href="setting-notification.html")
-									+icon("setting").stroke-icon
+								a.dropdown-item.border-duble(href="account-notification.html")
+									+icon("notification").active
+									div Notifications
+								a.dropdown-item(href="account-setting.html")
+									+icon("user-setting")
 									div Settings
 								a.dropdown-item(href="index.html")
 									+icon("logout").stroke-icon

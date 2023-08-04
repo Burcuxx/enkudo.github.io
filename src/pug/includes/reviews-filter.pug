@@ -1,0 +1,56 @@
+//reviews-filter Modal
+.ems-prd-reviews-filter-overlay.ems-overlay(data-target="body" data-ready="ems-prd-reviews-filter-ready" data-animate="ems-prd-reviews-filter-animate" data-type="remove")
+.ems-modal.ems-modal-lg.ems-prd-reviews-filter.ems-modal-end.ems-modal-lg-end
+    .modal-header.d-flex.justify-content-between
+        .title-modal Filtreler
+        .d-flex
+            a.d-flex(href="javascript:void(0)" aria-label="close" data-target="body" data-ready="ems-prd-reviews-filter-ready" data-animate="ems-prd-reviews-filter-animate" data-type="remove")
+                +icon("close")
+
+    .modal-body.p-25.p-lg-40.ems-scrollbar.ems-scrollbar-vertical
+        .rating-box
+            .modal-body-title Filter by average rate
+            .all-check-box.product-list-view(rel="reviews_list_1")
+                a.ems-check-list(href="javascript:void(0);" aria-label="reviews_type" rel="reviews_item_1")
+                    span.form-check-text 
+                        .card-stars-box.card-stars-box-4
+                            +icon("rate").rateicon-1
+                            +icon("rate").rateicon-2
+                            +icon("rate").rateicon-3
+                            +icon("rate").rateicon-4
+                            +icon("plus_minuss")
+                            span.card-stars-box-text.text-2 <b>4.0 - 4+</b> stars
+                a.ems-check-list(href="javascript:void(0);" aria-label="reviews_type" rel="reviews_item_1")
+                    span.form-check-text 
+                        .card-stars-box.card-stars-box-3
+                            +icon("rate").rateicon-1
+                            +icon("rate").rateicon-2
+                            +icon("rate").rateicon-3
+                            +icon("plus_minuss")
+                            span.card-stars-box-text.text-2 <b>3.0 - 3.9</b> stars
+                a.ems-check-list(href="javascript:void(0);" aria-label="reviews_type" rel="reviews_item_1")
+                    span.form-check-text 
+                        .card-stars-box.card-stars-box-2
+                            +icon("rate").rateicon-1
+                            +icon("rate").rateicon-2
+                            +icon("plus_minuss")
+                            span.card-stars-box-text.text-2 <b>2.0 - 2.9+</b> stars
+                a.ems-check-list(href="javascript:void(0);" aria-label="reviews_type" rel="reviews_item_1")
+                    span.form-check-text 
+                        .card-stars-box.card-stars-box-1
+                            +icon("rate").rateicon-1
+                            +icon("plus_minuss")
+                            span.card-stars-box-text.text-2 <b>1.0 - 1.9+</b> stars
+                a.ems-check-list(href="javascript:void(0);" aria-label="reviews_type" rel="reviews_item_1")
+                    span.form-check-text 
+                        .card-stars-box.card-stars-box-0
+                            +icon("rate").rateicon-1
+                            span.card-stars-box-text.text-2 No star
+                        
+
+    .modal-footer
+        .d-flex.flex-column.align-items-center.justify-content-end.w-100
+            .ems-field.mb-0.w-100
+                button.btn.btn-them-1.btn-lg.w-100(type='submit')
+                    span Confirm 
+//reviews-filter Modal

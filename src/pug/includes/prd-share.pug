@@ -1,0 +1,26 @@
+//share Modal
+.ems-prd-share-overlay.ems-overlay(data-target="body" data-ready="ems-prd-share-ready" data-animate="ems-prd-share-animate" data-type="remove")
+.ems-modal.ems-modal-lg.ems-prd-share.ems-modal-end.ems-modal-lg-end
+    .modal-header.d-flex.justify-content-between
+        .title-modal Share
+        .d-flex
+            a.d-flex(href="javascript:void(0)" aria-label="close" data-target="body" data-ready="ems-prd-share-ready" data-animate="ems-prd-share-animate" data-type="remove")
+                +icon("close")
+
+    .modal-body.p-25.p-lg-40.ems-scrollbar.ems-scrollbar-vertical
+        .share-box
+            .all-share-box
+                a.ems-share-list(href="javascript:void(0);" target="_blank")
+                    +icon("facebook")
+                    span Facebook
+                a.ems-share-list(href="javascript:void(0);" target="_blank")
+                    +icon("twitter")
+                    span Twitter
+                a.ems-share-list(href="javascript:void(0);" target="_blank")
+                    +icon("linkedin")
+                    span LinkedIn
+                a.ems-share-list(href="javascript:void(0);" target="_blank")
+                    +icon("copylink")
+                    span Copy Link
+
+//share Modal

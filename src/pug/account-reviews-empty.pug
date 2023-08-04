@@ -1,0 +1,48 @@
+extends layouts/default.pug
+
+block prepend head
+    - var pageTitle = "Enkudo"
+    - var pageDescription = "My Favoriets Sayfası, Enkudo"
+    - var pageName = "My Favoriets"
+    - var pageClass = "page page-account-reviews"
+    - var RatingsReviewsActive = "active"
+
+block content
+    section.account-section.mb-80
+        .container.p-0
+            .row.g-5
+                .account-box
+                    .left-box
+                        include includes/account-left-menu
+
+                    .right-box 
+                        .rb-content.bg-dark-them-2
+                            .rb-content-ratings-reviews
+                                .product-list.mb-0.mb-lg-0.w-100
+                                    .title-box
+                                        h4.d-none.d-lg-block Ratings & Reviews
+                                        p You can manage your comments and ratings in here.
+                                    
+                                    .icon-set-box
+                                        .isb-list
+                                            +icon("reviews-time").stroke-icon
+                                            span <b>2 services</b> are waiting for review.
+                                        .isb-list
+                                            +icon("reviews-thumbs").stroke-icon
+                                            span Your <b>4 comments</b> were found useful by users.
+
+                                    .ems-tab
+                                        .ems-tab-header.me-3
+                                            a.nav-link.selected(href="javascript:void(0);" rel="tab-1" aria-label="Tab 1")
+                                                span Waiting for Review (0)
+                                                
+                                            a.nav-link(href="javascript:void(0);" rel="tab-2" aria-label="Tab 2")
+                                                span Past Review (0)
+                                    
+                                        .ems-tab-content.mt-0.mb-0.px-15.px-lg-0.reviews-list-box
+                                            .d-flex.flex-column.align-items-center
+                                                .box-empty
+                                                    .title-box-empty.mt-25
+                                                        h4 There is no rating & review yet.
+                                                        a.btn.btn-them-2.btn-lg.mt-40.mxw-200.w-100(href="/")
+                                                            span Discover

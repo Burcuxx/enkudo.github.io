@@ -1,7 +1,20 @@
 .site-footer {
-    border-top: 2px solid $them-color;
     background: $content-bg-color;
     padding: 40px 32px;
+    position: relative;
+    &::before{
+        content: '';
+        width: 100%;
+        height: 2px;
+        background: $them-color;
+        opacity: 0.5;
+        bottom: auto;
+        top: 0;
+        left: 0;
+        right: 0;
+        position: absolute;
+        display: block;
+    }
     .logo{
         width: 106px;
         max-height: 32px;
@@ -39,10 +52,10 @@
               height: 32px;
               color: $white;
               &.icon-plus_minus{
-                display: block;
+                display: none;
               }
               &.icon-plus_minuss{
-                display: none;
+                display: block;
               }
             }
             &.show{   
@@ -58,10 +71,10 @@
               svg{ 
                 color: $white;               
                 &.icon-plus_minus{
-                    display: none;
+                    display: block !important;
                 }
                 &.icon-plus_minuss{
-                    display: block;
+                    display: none !important;
                 }
               }
             }
